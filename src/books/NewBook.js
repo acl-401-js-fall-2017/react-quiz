@@ -18,7 +18,7 @@ export class NewCategory extends PureComponent {
     event.preventDefault();
     const { elements } =event.target;
     const category ={
-      name: elements.name.value,
+      title: elements.title.value,
     };
     this.setState({ redirect: true });
     this.handleAdd(category);
@@ -28,7 +28,7 @@ export class NewCategory extends PureComponent {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input name="name" placeholder="name"/>
+          <input name="title" placeholder="title"/>
           <button type="submit">Add</button>
         </form> 
         { this.state.redirect && (<Redirect to="/books"/>) }

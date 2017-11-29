@@ -1,10 +1,11 @@
 import { addBook } from './actions';
+import shortid from 'shortid';
 
 function initBooks() {
-  const book ={
-    title:'good Book'
-  };
-  addBook(book);
+  return [{
+    title:'good Book',
+    _id: shortid.generate()
+  }];
 }
 
 export default function books(state = initBooks(), { type, payload }) {
