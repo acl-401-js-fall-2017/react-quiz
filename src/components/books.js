@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 
 export default class Books extends Component {
-
-  state = {
-    books: []
+  constructor() {
+    super();
+    this.state = {
+      books: [
+        'title:Fox, Author:Box',
+        'title:Moby, Author: Anderson'
+      ]
+    };
   }
 
   render() {
+    const { books } = this.state;
     return(
       <div>  
         <h1>Books:</h1>
         <ul>
           <li>
-            Moby, Anderson
+            {books[1]}
+          </li>
+          <li>
+            {books[0]}
           </li>
         </ul>
       </div>
