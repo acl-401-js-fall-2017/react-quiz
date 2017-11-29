@@ -39,7 +39,7 @@ export default class Books extends Component {
   }
 
   handleRemove = i => {
-    const newBooks = this.state.books;
+    const newBooks = [ ...this.state.books ];
     newBooks.splice(i, 1);
     this.setState({
       books: newBooks
