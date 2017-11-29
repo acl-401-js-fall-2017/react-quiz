@@ -17,7 +17,7 @@ export class Books extends Component {
               <th>Title</th>
               <th>Author</th>
             </tr>
-            {books.map((book, i) => <Book book={book} i={i}/>)}
+            {this.state.books.map((book, i) => <Book book={book} i={i}/>)}
           </thead>
         </table>
       </div>
