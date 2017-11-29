@@ -24,9 +24,11 @@ export default class Books extends PureComponent {
       return (
         <section>
           <h1>All the books</h1>
-          <Book books={this.state.books}
-            addBook={book => this.handleAdd(book)}
-          />
+          <div className="bookView">
+            <Book books={this.state.books}
+              addBook={book => this.handleAdd(book)}
+            />
+          </div>
         </section>
       );
     }
