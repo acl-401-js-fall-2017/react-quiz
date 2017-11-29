@@ -1,20 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import AddBook from './AddBook';
 import Book from './Book';
-import { addNewBook } from './actions';
 
-export default class Books extends PureComponent {
+export default class Books extends Component {
   constructor() {
     super();
     this.state = {
-      books: []
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
       books: [
-        ...this.state.books,
         {
           title: 'A Book',
           author: 'Arthur'
@@ -23,6 +15,15 @@ export default class Books extends PureComponent {
           title: 'The Hobbit',
           author: 'J. R. R. Tolkein'
         }
+      ]
+    };
+  }
+
+  addNewBook = newBook => {
+    this.setState({
+      books: [
+        ...this.state.books,
+        newBook
       ]
     });
   }
@@ -34,11 +35,14 @@ export default class Books extends PureComponent {
       author: e.target.author.value
     };
 
+    this.addNewBook(newBook);
+  }
+
+  handleRemove = i => {
+    const newBooks = this.state.books;
+    newBooks.splice(i, 1);
     this.setState({
-      books: [
-        ...this.state.books,
-        newBook
-      ]
+      books: newBooks
     });
   }
 
@@ -48,7 +52,7 @@ export default class Books extends PureComponent {
         <h1>BOOKS! :D</h1>
         <AddBook onAdd={this.handleAdd}/>
         {this.state.books.map((book, i) => (
-          <Book key={i} bookInfo={book}/>
+          <Book key={i} bookInfo={book} index={i} onRemove={this.handleRemove}/>
         ))}
       </div>
     );
