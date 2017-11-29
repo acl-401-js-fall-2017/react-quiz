@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { addBooks } from '../action-books';
+// import { addBooks } from '../action-books';
 import './App.css';
-import Books from '../Books';
+import Books from './Books';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      books: []
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     books: []
+  //   };
+  // }
   
   render() {
     return (

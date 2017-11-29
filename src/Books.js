@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
+import { v1 } from 'uuid';
 
 class Books extends Component {
   constructor() {
     super();
     this.state = {
-      books: []
+      books: [
+        {
+          _id: v1(),
+          title: 'One',
+          author: 'me'
+        }
+      ]
     };
   }
 
+  handleAddBook = (elements) => {
+    const newState = AddBook(this.state, elements);
+    this.setState(newState);
+  }
+  
+
   render() {
+    const { books } = this.state;
     return (
       <div>
         <table id="table">
@@ -20,10 +34,10 @@ class Books extends Component {
             </tr>
           </thead>
           <tbody>
-            {books.map(book => <ListBook key={book._id} id={book._id} title={book.title}  author={book.author} onRemove={onRemove}/>)}
+            {books.map(book => <ListBook key={book._id} id={book._id} title={book.title}  author={book.author}/>)}
           </tbody>
         </table>
-        <AddBook onAddBook={onAddBook}/>
+        <AddBook handleAddBook={AddBook}/>
         
       </div>
     );
@@ -32,9 +46,24 @@ class Books extends Component {
 
 export default Books;
 
+class ListBook extends Component {
+  
+  render() {
+    const { title, author } = this.props;
+    return(
+      <tr>
+        <td>{ title }</td>
+        <td>{ author }</td>
+        {/* <td><button className="button remove" onClick={() => onRemove(id)}>Remove</button></td> */}
+      </tr>
+    );
+  }
+}
+
 class AddBook extends Component {
   render() {
     const { onAddBook } = this.props;
+    console.log('addbook', this.props);
     return (
       <form id="form" onSubmit={event => {
         event.preventDefault();
