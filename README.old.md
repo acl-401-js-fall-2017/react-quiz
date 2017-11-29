@@ -5,7 +5,7 @@ This quiz is designed to test your familiarity with basic React components.
 ## Rules
 
 1. **Make an initial commit when you start your work**
-1. You have **30 minutes** to complete what you can.
+1. You have **40 minutes** to complete what you can.
 1. You must complete this work on your own within the allotted time
     * Keep a good commit history to show progression of work.
     * You **need to manage your time** to have PR and last commit before deadline (remember, you can
