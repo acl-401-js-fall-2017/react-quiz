@@ -3,8 +3,8 @@
 export function addBook(state, newBook) {
   return {
     ...state,
-    book: [
-      ...state.book,
+    books: [
+      ...state.books,
       newBook
     ]
   };
