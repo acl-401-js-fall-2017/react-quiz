@@ -14,18 +14,12 @@ export default class Books extends PureComponent {
     };
   }
 
-    handleAdd = book => {
-      const newState = addBook(this.state, book);
+    handleAdd = books => {
+      const newState = addBook(this.state, books);
       this.setState(newState);
     }
 
     render(){
-    //   const displayBooks = {
-    //     book: <Book books={this.state.books}
-    //       addBook={book => this.handleAdd(book)}
-    //     />
-    //   };
-      const { books } = this.state;
 
       return (
         <section>
