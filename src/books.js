@@ -15,13 +15,10 @@ export default class Books extends Component{
     }
 
     handleAdd = (bookData) => {
-        bookData._id = this.state.books.length();
         const newState = this.state;
         newState.books.push(bookData);
         this.setState(newState);
       }
-
-
         render(){
             const booklist = this.state.books.map((book, index) => {
                 return <Book listKey={index} book={book} />;
