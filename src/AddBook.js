@@ -5,7 +5,7 @@ export default class AddBook extends Component{
   constructor(props) {
     super(props);
     const { book = {} } = props;
-    this.state = {
+    this.props = {
       title: book.title || null,
       author: book.author || null
     };

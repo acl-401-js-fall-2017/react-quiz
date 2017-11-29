@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Book from './Book';
 import AddBook from './AddBook';
-export class Books extends Component {
+export class Books extends PureComponent {
   constructor() {
     super();
     this.state = {
