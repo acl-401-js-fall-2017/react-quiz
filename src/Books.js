@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Book from './Book';
-import AddBook from '../AddBook';
+import AddBook from './AddBook';
 export class Books extends Component {
   constructor() {
     super();
     this.state = {
-      books: {}
+      books: []
     };
   }
 
@@ -16,15 +16,7 @@ export class Books extends Component {
   render() {
     return(
       <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-            </tr>
-            {this.state.books.map((book, i) => <Book book={book} i={i} />)}
-          </thead>
-        </table>
+        <Book books={this.state.books}/>
         <AddBook onComplete={this.handleAdd}/>
       </div>
     );

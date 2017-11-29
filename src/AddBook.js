@@ -8,7 +8,7 @@ export default class AddBook extends Component{
     });
   }
   render() {
-    const { title, author } = this.state;
+    const { title, author } = this.props;
     return(
       <form onSubmit={this.handleSubmit}>
         <div>
