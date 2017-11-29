@@ -14,7 +14,19 @@ class Books extends PureComponent {
     };
   }
 
+  handleAdd = (name, author) => {
+    const book = {
+      name ,
+      author
+    };
+    this.setState({ ...this.state,
+      books : [ 
+        ...this.state.books,
+        book
+      ] });
+  }
   
+
   render() {
     const { books }= this.state;
     return (
@@ -24,7 +36,7 @@ class Books extends PureComponent {
             <p key={book.name}>{book.name}, written by: {book.author} </p>
           ))}
         </div>
-        <AddBook/>
+        <AddBook handleOnSubmit={this.handleAdd}/>
       </div>
     );
   }
