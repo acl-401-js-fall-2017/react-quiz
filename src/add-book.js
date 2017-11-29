@@ -19,7 +19,7 @@ export default class addBook extends Component{
             <input name="title" type="text" />
             <br/>
             <label>Auhtor: </label>
-            <input name="authpr" type="text" />
+            <input name="author" type="text" />
             <br/>
             <button type="submit">Add</button>
           </form>

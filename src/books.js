@@ -13,6 +13,14 @@ export default class Books extends Component{
             ]
         }
     }
+
+    handleAdd = (bookData) => {
+        const newState = this.state;
+        newState.books.push(bookData);
+        this.setState(newState);
+      }
+
+
         render(){
             const booklist = this.state.books.map(book => {
                 return <Book book={book}/>
@@ -24,7 +32,7 @@ export default class Books extends Component{
                     <li>test</li>
                     {booklist}
                 </ul>
-                <AddBook/>
+                <AddBook handleAdd={bookData => this.handleAdd(bookData)}/>
                 </div>
             );
         };
