@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
+import AddBook from './AddBook';
 import Book from './Book';
+import { addNewBook } from './actions';
 
 export default class Books extends PureComponent {
   constructor() {
@@ -25,12 +27,28 @@ export default class Books extends PureComponent {
     });
   }
 
+  handleAdd = e => {
+    e.preventDefault();
+    const newBook = {
+      title: e.target.title.value,
+      author: e.target.author.value
+    };
+
+    this.setState({
+      books: [
+        ...this.state.books,
+        newBook
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="Books">
         <h1>BOOKS! :D</h1>
-        {this.state.books.map(book => (
-          <Book bookInfo={book}/>
+        <AddBook onAdd={this.handleAdd}/>
+        {this.state.books.map((book, i) => (
+          <Book key={i} bookInfo={book}/>
         ))}
       </div>
     );
