@@ -12,8 +12,8 @@ export default class Book extends PureComponent {
             {this.props.books.map((book, index) => {
               return (
                 <tr key={index}>
-                  <td>{book.title}</td>
-                  <td>{book.author}</td>
+                  <td>Title: {book.title}</td>
+                  <td>Author: {book.author}</td>
                 </tr>
               );
             })}
