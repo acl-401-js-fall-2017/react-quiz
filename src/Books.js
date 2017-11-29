@@ -8,7 +8,7 @@ class Books extends Component {
       books: [
         {
           _id: v1(),
-          title: 'One',
+          title: 'One Flew Over',
           author: 'me'
         }
       ]
@@ -54,7 +54,6 @@ class ListBook extends Component {
       <tr>
         <td>{ title }</td>
         <td>{ author }</td>
-        {/* <td><button className="button remove" onClick={() => onRemove(id)}>Remove</button></td> */}
       </tr>
     );
   }
@@ -62,8 +61,7 @@ class ListBook extends Component {
 
 class AddBook extends Component {
   render() {
-    const { onAddBook } = this.props;
-    console.log('addbook', this.props);
+    const { AddBook } = this.props;
     return (
       <form id="form" onSubmit={event => {
         event.preventDefault();
@@ -72,7 +70,7 @@ class AddBook extends Component {
           title: elements.title.value,
           author: elements.author.value
         };
-        onAddBook(addedBook);
+        AddBook(addedBook);
         elements.title.value='';
         elements.author.value='';
       }}>
@@ -88,7 +86,3 @@ class AddBook extends Component {
     ); 
   }
 }
-
-
-
-
