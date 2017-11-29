@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 
 export default class AddBook extends Component{
 
+  constructor(props) {
+    super(props);
+    const { book = {} } = props;
+    this.state = {
+      title: book.title || null,
+      author: book.author || null
+    };
+  }
   handleChange = ({ target: input }) => {
     this.setState({
       [input.name]: input.value
