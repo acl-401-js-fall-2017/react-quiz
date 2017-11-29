@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Book from './book';
+import AddBook from './add-book'
 
 export default class Books extends Component{
     constructor(){
@@ -18,10 +19,13 @@ export default class Books extends Component{
             });
 
             return(
+                <div>
                 <ul>
                     <li>test</li>
                     {booklist}
                 </ul>
+                <AddBook/>
+                </div>
             );
         };
     }
