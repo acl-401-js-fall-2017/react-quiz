@@ -34,7 +34,7 @@ export default class Books extends Component {
       title: e.target.title.value,
       author: e.target.author.value
     };
-
+    e.target.reset();
     this.addNewBook(newBook);
   }
 
