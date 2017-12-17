@@ -9,31 +9,26 @@ class Counter extends PureComponent {
     };
   }
 
-
-  counter = (state, action) => {
-    switch(action.value) {
+  counter = (action) => {
+    switch(action) {
       case 'UP':
-        return state +1;
+        return this.setState({ count: this.state.count + 1 });
       case 'DOWN':
-        return state -1;
+        return this.setState({ count: this.state.count - 1 });
       default:
-        return state;    
+        return this.state;    
     }
   }
-
-
-
 
   render() {
     const { count } = this.state;
 
     return(
       <div>
-        <button action="DOWN" onClick={this.counter()}>-</button>
+        <button onClick={() => this.counter('DOWN')}>-</button>
         {count} 
-        <button action="UP" onClick={this.counter()}>+</button>
+        <button onClick={() => this.counter('UP')}>+</button>
       </div>
-
     );
   }
 }
