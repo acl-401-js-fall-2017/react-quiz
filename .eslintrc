@@ -1,20 +1,16 @@
 {
-  "env": {
-    "node": true,
-    "mocha": true,
-    "es6": true,
-    "browser": true
-  },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "react-app"
+  ],
   "rules": {
     "no-console": "warn",
     "indent": [
       "error",
-      4
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
+      2,
+      {
+        "SwitchCase": 1
+      }
     ],
     "quotes": [
       "error",
@@ -23,11 +19,22 @@
     "semi": [
       "error",
       "always"
+    ],
+    "space-in-parens": [
+      "error"
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "react/jsx-curly-spacing": [
+      2,
+      {
+        "when": "never",
+        "spacing": {
+          "objectLiterals": "never"
+        }
+      }
     ]
-  },
-  "parserOptions":{
-  "ecmaFeatures": {
-    "experimentalObjectRestSpread": true
-  }
   }
 }
