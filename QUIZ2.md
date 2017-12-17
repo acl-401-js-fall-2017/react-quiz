@@ -4,8 +4,8 @@ React Counter Quiz
 ## Main Quiz
 
 * Open book
-* Submit as normal lab assignment
-* Time Limit 50 minutes
+* Submit as normal lab assignment from this repo
+* Time Limit **50 minutes**
 
 ## Bonus Quiz
 
